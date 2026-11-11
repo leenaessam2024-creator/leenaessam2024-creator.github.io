@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>امتحان التكنولوجيا - توجيهي - عابود</title>
+<title>امتحانات توجيهي - عابود</title>
 <style>
 *{box-sizing:border-box}
 body{font-family:'Segoe UI',Arial;margin:0;background:#dbe6f5;padding:20px 12px}
@@ -11,18 +11,21 @@ body{font-family:'Segoe UI',Arial;margin:0;background:#dbe6f5;padding:20px 12px}
 .header{background:linear-gradient(135deg,#1e3a6e,#2a5aa8);color:white;text-align:center;padding:32px 18px 24px;border-bottom:4px solid #c9a227}
 .header:before{content:"✦ ✦ ✦";display:block;color:#ffd700;letter-spacing:8px;font-size:14px;margin-bottom:10px}
 .header p{margin:4px;font-size:16px}
-.header h2{margin:16px 0 0;font-size:25px;line-height:1.5}
+.header h2{margin:16px 0 0;font-size:25px}
 .header h2 span{color:#ffd700}
 .top-badge{background:#ffd700;color:#1e3a6e;display:inline-block;padding:6px 18px;border-radius:20px;font-weight:bold;font-size:14px;margin-bottom:12px}
 .card{padding:28px 24px;text-align:center}
 label{display:block;text-align:right;font-weight:bold;color:#1e3a6e;margin:14px 0 5px;font-size:16px}
 input,select{width:100%;padding:13px;border:2px solid #dbe6f5;border-radius:12px;font-size:16px;background:#f8faff}
-select{cursor:pointer}
-.info-box{background:#f0f5ff;border:1px dashed #1e3a6e;padding:15px;border-radius:12px;margin:18px 0;font-size:16px;line-height:1.9;color:#1e3a6e}
-.btn2{display:block;background:linear-gradient(135deg,#0d9b4d,#0ec95c);color:white;text-decoration:none;padding:18px;border-radius:14px;font-size:21px;font-weight:bold;margin:18px 0;box-shadow:0 6px 15px rgba(13,155,77,.35);cursor:pointer;border:none;width:100%}
+.btn2{display:block;background:linear-gradient(135deg,#0d9b4d,#0ec95c);color:white;padding:18px;border-radius:14px;font-size:21px;font-weight:bold;margin:18px 0;box-shadow:0 6px 15px rgba(13,155,77,.35);cursor:pointer;border:none;width:100%}
+.today-box{background:#e8f5e9;border:2px solid #0d9b4d;border-radius:14px;padding:18px;margin:18px 0}
+.no-exam{background:#fff3cd;border:2px solid #ffc107;border-radius:14px;padding:20px;margin:18px 0}
+.schedule{text-align:right;background:#f8faff;border:2px solid #dbe6f5;border-radius:14px;padding:18px;margin-top:20px}
+.schedule h3{text-align:center;color:#1e3a6e;margin:0 0 12px}
+.s-item{background:white;border:1px solid #eee;padding:12px;border-radius:10px;margin:8px 0;display:flex;justify-content:space-between}
+.s-item.today{background:#e8f5e9;border:2px solid #0d9b4d;font-weight:bold}
 .signature{margin:0 24px 24px;background:linear-gradient(135deg,#fff8d6,#fff3b0);border:2px solid #c9a227;border-radius:16px;padding:20px;text-align:center}
 .signature h3{margin:0;color:#7a5c00;font-size:21px}
-.signature p{margin:8px 0 0;font-size:17px}
 .footer{text-align:center;padding:0 0 22px;color:#888;font-size:13px}
 </style>
 </head>
@@ -30,7 +33,7 @@ select{cursor:pointer}
 
 <div class="frame">
 <div class="header">
-<div class="top-badge">✦ امتحان رسمي ✦</div>
+<div class="top-badge">✦ امتحانات رسمية ✦</div>
 <p>دولة فلسطين</p>
 <p>وزارة التربية والتعليم العالي</p>
 <p>مديرية التربية والتعليم - بيرزيت</p>
@@ -40,31 +43,23 @@ select{cursor:pointer}
 
 <div class="card">
 <h2 style="margin:0;color:#1e3a6e">🌸 أهلاً بكم أبطال التوجيهي 🌸</h2>
+<p id="todayDate" style="color:#666"></p>
 
 <label>✏️ اسم الطالب الثلاثي</label>
 <input type="text" id="studentName" placeholder="اكتب اسمك الثلاثي *">
 
-<label>📚 اختر الشعبة</label>
-<select id="branch">
-<option>علمي</option>
-<option>أدبي</option>
-<option>تجاري</option>
-<option>صناعي</option>
+<label>🎓 اختر الشعبة / المساق</label>
+<select id="branch" onchange="updateSubjects()">
+<option value="علمي">علمي</option>
+<option value="أدبي">أدبي</option>
+<option value="تجاري">تجاري</option>
+<option value="صناعي">صناعي</option>
+<option value="فندقي">فندقي</option>
+<option value="زراعي">زراعي</option>
 </select>
 
-<label>📖 اختر المساق</label>
-<select id="subject">
-<option>التكنولوجيا</option>
-<option>الرياضيات</option>
-<option>الفيزياء</option>
-<option>الكيمياء</option>
-<option>الأحياء</option>
-<option>اللغة العربية</option>
-<option>اللغة الإنجليزية</option>
-<option>التربية الإسلامية</option>
-<option>التاريخ</option>
-<option>الجغرافيا</option>
-</select>
+<label>📖 اختر المادة</label>
+<select id="subject"></select>
 
 <label>📝 اختر نوع الامتحان</label>
 <select id="examType">
@@ -73,45 +68,69 @@ select{cursor:pointer}
 <option value="نهائي">امتحان نهائي 🎓</option>
 </select>
 
-<div class="info-box" id="infoBox">
-⏰ <b>مدة الامتحان:</b> حسب نوع الامتحان<br>
-📝 اختر المساق ونوع الامتحان ثم اضغط ابدأ
-</div>
+<div id="todayExam"></div>
 
-<!-- حطي رابط قوقل فورم تبعك محل LINK_HERE -->
-<button class="btn2" onclick="startExam()">ابدأ الامتحان الآن ✅</button>
-<p style="color:#888;font-size:14px">سيتم تحويلك لنموذج الامتحان في قوقل فورم</p>
+<div class="schedule">
+<h3>📅 جدول الامتحانات</h3>
+<div id="scheduleList"></div>
+<p style="text-align:center;color:#888;font-size:13px;margin:10px 0 0">الامتحان يظهر فقط في يومه</p>
+</div>
 </div>
 
 <div class="signature">
 <h3>🌟 مع تمنياتي لكم بالتوفيق والنجاح 🌟</h3>
-<p>أتمنى لكم التفوق والتميز، أنتم قدها!</p>
-<p><b>معلمتكم: لينا عصام ❤️</b></p>
+<p>معلمتكم: لينا عصام ❤️</p>
 </div>
-
 <div class="footer">مدرسة عابود الثانوية المختلطة — 2026</div>
 </div>
 
 <script>
-const examTypeSelect = document.getElementById('examType');
-const infoBox = document.getElementById('infoBox');
-function updateInfo(){
-  const t = examTypeSelect.value;
-  if(t === 'يومي') infoBox.innerHTML = '⏰ <b>امتحان يومي:</b> 10 أسئلة - 15 دقيقة<br>📝 ركز، واقرأ السؤال جيداً';
-  if(t === 'شهري') infoBox.innerHTML = '⏰ <b>امتحان شهري:</b> 20 سؤال - 30 دقيقة<br>📝 يشمل كل ما أخذناه هذا الشهر';
-  if(t === 'نهائي') infoBox.innerHTML = '⏰ <b>امتحان نهائي:</b> 30 سؤال - 60 دقيقة<br>🎓 بالتوفيق، أنت قدها!';
-}
-examTypeSelect.addEventListener('change', updateInfo);
-updateInfo();
+// ===== مواد كل شعبة الصحيحة - توجيهي فلسطين =====
+const subjectsByBranch = {
+  "علمي": ["اللغة العربية", "اللغة الإنجليزية", "الرياضيات", "الفيزياء", "الكيمياء", "الأحياء", "التكنولوجيا", "التربية الإسلامية"],
+  "أدبي": ["اللغة العربية", "اللغة الإنجليزية", "الرياضيات", "التاريخ", "الجغرافيا", "الثقافة العلمية", "التكنولوجيا", "التربية الإسلامية"],
+  "تجاري": ["اللغة العربية", "اللغة الإنجليزية", "الرياضيات", "المحاسبة", "إدارة الأعمال", "التكنولوجيا", "التربية الإسلامية", "الاقتصاد"],
+  "صناعي": ["اللغة العربية", "اللغة الإنجليزية", "الرياضيات", "الفيزياء", "الرسم الصناعي", "التكنولوجيا", "التربية الإسلامية", "العلوم المهنية"],
+  "فندقي": ["اللغة العربية", "اللغة الإنجليزية", "الرياضيات", "خدمات الفنادق", "فن الطهي", "التكنولوجيا", "التربية الإسلامية"],
+  "زراعي": ["اللغة العربية", "اللغة الإنجليزية", "الرياضيات", "الإنتاج النباتي", "الإنتاج الحيواني", "التكنولوجيا", "التربية الإسلامية"]
+};
 
-function startExam(){
+function updateSubjects(){
+  const branch = document.getElementById('branch').value;
+  const select = document.getElementById('subject');
+  select.innerHTML = subjectsByBranch[branch].map(s => `<option value="${s}">${s}</option>`).join('');
+}
+updateSubjects();
+
+// ===== جدول الامتحانات حسب التاريخ - غيري هون بس! =====
+const exams = [
+  { date: "2026-11-12", branch: "علمي", subject: "التكنولوجيا", type: "يومي", link: "LINK_TECH_YAWMI" },
+  { date: "2026-11-15", branch: "علمي", subject: "التكنولوجيا", type: "شهري", link: "LINK_TECH_SHAHRI" },
+  { date: "2026-11-18", branch: "علمي", subject: "الرياضيات", type: "يومي", link: "LINK_MATH_YAWMI" },
+  { date: "2026-11-20", branch: "أدبي", subject: "التاريخ", type: "شهري", link: "LINK_TARIKH_SHAHRI" },
+  { date: "2026-11-25", branch: "علمي", subject: "التكنولوجيا", type: "نهائي", link: "LINK_TECH_NIHAI" },
+];
+
+const today = new Date();
+const todayStr = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+document.getElementById('todayDate').innerText = '📅 اليوم: ' + today.toLocaleDateString('ar', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+
+function formatDate(d){ const [y,m,day]=d.split('-'); return day+'/'+m+'/'+y; }
+
+const todayExam = exams.find(e => e.date === todayStr);
+const box = document.getElementById('todayExam');
+if(todayExam){
+  box.innerHTML = `<div class="today-box"><h3>✅ امتحان اليوم متاح الآن!</h3><p style="font-size:18px;margin:12px 0">🎓 ${todayExam.branch} - 📖 ${todayExam.subject} - ${todayExam.type==='يومي'?'امتحان يومي 📝':todayExam.type==='شهري'?'امتحان شهري 📅':'امتحان نهائي 🎓'}</p><button class="btn2" onclick="openExam('${todayExam.link}')">ابدأ امتحان اليوم ✅</button></div>`;
+} else {
+  const next = exams.find(e => e.date > todayStr);
+  box.innerHTML = `<div class="no-exam"><h3 style="margin:0">😊 لا يوجد امتحان اليوم</h3><p style="margin:10px 0 0">${next ? 'الامتحان القادم: <b>'+next.branch+' - '+next.subject+' - '+next.type+'</b><br>بتاريخ: '+formatDate(next.date) : 'لا يوجد امتحانات قادمة'}</p></div>`;
+}
+document.getElementById('scheduleList').innerHTML = exams.map(e => `<div class="s-item ${e.date===todayStr?'today':''}"><span>${formatDate(e.date)} - ${e.branch} - ${e.subject} (${e.type})</span><span>${e.date===todayStr?'✅ اليوم':e.date<todayStr?'انتهى':'قريباً'}</span></div>`).join('');
+function openExam(link){
   const name = document.getElementById('studentName').value;
   if(!name){ alert('اكتب اسمك أولاً يا بطل!'); return; }
-  const subject = document.getElementById('subject').value;
-  const type = examTypeSelect.value;
-  alert('أهلاً ' + name + '\nالمساق: ' + subject + '\nنوع الامتحان: ' + type + '\n\nسيتم تحويلك للامتحان الآن، بالتوفيق!');
-  // حطي رابط قوقل فورم تبعك هون
-  window.open('LINK_HERE', '_blank');
+  if(link.includes('LINK_')){ alert('لسه ما حطينا رابط لهذا الامتحان!'); return; }
+  window.open(link, '_blank');
 }
 </script>
 </body>
