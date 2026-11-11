@@ -10,17 +10,12 @@ body{font-family:Arial;margin:0;background:#eef2f7}
 .header{background:#1e3a6e;color:white;text-align:center;padding:28px 15px}
 .header p{margin:3px;font-size:16px}
 .header h2{margin:14px 0 0;font-size:23px;line-height:1.5}
-.card{background:white;max-width:650px;margin:20px auto;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-input,select{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-size:16px}
-.q{margin:18px 0;padding:15px;background:#f8faff;border-radius:10px;border:1px solid #e0e7ff}
-.q h3{margin:0 0 10px;font-size:18px;line-height:1.6}
-label{display:block;padding:11px;margin:6px 0;background:white;border:1px solid #ddd;border-radius:8px;cursor:pointer;font-size:16px}
-button{background:#1e3a6e;color:white;border:none;padding:15px;border-radius:10px;font-size:19px;width:100%;cursor:pointer}
-#done{display:none;text-align:center;padding:35px 20px}
-.footer{text-align:center;color:#666;font-size:13px;padding:15px}
+.card{background:white;max-width:650px;margin:20px auto;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.1);text-align:center}
+input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-size:16px}
+.btn{display:block;background:#1e3a6e;color:white;text-decoration:none;padding:18px;border-radius:10px;font-size:20px;margin:15px 0}
+.btn2{display:block;background:#0d9b4d;color:white;text-decoration:none;padding:18px;border-radius:10px;font-size:20px;margin:15px 0}
 .signature{text-align:center;background:#fff3cd;border:2px solid #ffc107;padding:20px;margin:20px auto;max-width:650px;border-radius:12px}
-.signature h3{margin:0;color:#856404;font-size:20px;line-height:1.8}
-.signature p{margin:8px 0 0;font-size:17px;color:#333}
+.signature h3{margin:0;color:#856404;font-size:20px}
 </style>
 </head>
 <body>
@@ -33,85 +28,22 @@ button{background:#1e3a6e;color:white;border:none;padding:15px;border-radius:10p
 <h2>امتحان التكنولوجيا — توجيهي</h2>
 </div>
 
-<div class="card" id="exam">
-<h2 style="text-align:center;margin-top:0">بيانات الطالب</h2>
-<input type="text" id="name" placeholder="اسم الطالب الثلاثي *">
-<select><option>اختر الفرع</option><option>علمي</option><option>أدبي</option><option>تجاري</option><option>صناعي</option></select>
-
-<div class="q"><h3>1. ما هي وحدة المعالجة المركزية في الحاسوب؟</h3>
-<label><input type="radio" name="q1"> RAM</label>
-<label><input type="radio" name="q1"> CPU</label>
-<label><input type="radio" name="q1"> Hard Disk</label></div>
-
-<div class="q"><h3>2. أي من التالي يعتبر من وحدات الإدخال؟</h3>
-<label><input type="radio" name="q2"> الشاشة</label>
-<label><input type="radio" name="q2"> لوحة المفاتيح</label>
-<label><input type="radio" name="q2"> الطابعة</label></div>
-
-<div class="q"><h3>3. ما هو اختصار (WWW)؟</h3>
-<label><input type="radio" name="q3"> World Wide Web</label>
-<label><input type="radio" name="q3"> World Web Window</label>
-<label><input type="radio" name="q3"> Wide World Web</label></div>
-
-<div class="q"><h3>4. أي برنامج يستخدم لتصميم العروض التقديمية؟</h3>
-<label><input type="radio" name="q4"> Word</label>
-<label><input type="radio" name="q4"> PowerPoint</label>
-<label><input type="radio" name="q4"> Excel</label></div>
-
-<div class="q"><h3>5. ما هي وظيفة برنامج مكافح الفيروسات؟</h3>
-<label><input type="radio" name="q5"> تسريع الانترنت</label>
-<label><input type="radio" name="q5"> حماية الجهاز من البرامج الضارة</label>
-<label><input type="radio" name="q5"> تحرير الصور</label></div>
-
-<div class="q"><h3>6. ما هي وحدة قياس سرعة المعالج؟</h3>
-<label><input type="radio" name="q6"> Byte</label>
-<label><input type="radio" name="q6"> Hertz</label>
-<label><input type="radio" name="q6"> Pixel</label></div>
-
-<div class="q"><h3>7. أي من التالي يعتبر نظام تشغيل؟</h3>
-<label><input type="radio" name="q7"> Windows</label>
-<label><input type="radio" name="q7"> Google Chrome</label>
-<label><input type="radio" name="q7"> Photoshop</label></div>
-
-<div class="q"><h3>8. ماذا نسمي شبكة تربط أجهزة داخل مبنى واحد؟</h3>
-<label><input type="radio" name="q8"> WAN</label>
-<label><input type="radio" name="q8"> LAN</label>
-<label><input type="radio" name="q8"> MAN</label></div>
-
-<div class="q"><h3>9. ما هو تعريف الذكاء الاصطناعي؟</h3>
-<label><input type="radio" name="q9"> برنامج لتشغيل الألعاب فقط</label>
-<label><input type="radio" name="q9"> قدرة الآلة على محاكاة ذكاء الإنسان</label>
-<label><input type="radio" name="q9"> نوع من الفيروسات</label></div>
-
-<div class="q"><h3>10. أي من التالي يعتبر من وسائل التخزين السحابي؟</h3>
-<label><input type="radio" name="q10"> Google Drive</label>
-<label><input type="radio" name="q10"> لوحة المفاتيح</label>
-<label><input type="radio" name="q10"> الطابعة</label></div>
-
-<button onclick="submitExam()">تسليم الامتحان ✅</button>
+<div class="card">
+<h2>بيانات الطالب</h2>
+<input type="text" placeholder="اسم الطالب الثلاثي *">
+<input type="text" placeholder="الشعبة - علمي / أدبي">
+<p style="font-size:17px;line-height:1.8">اضغط على الزر بالأسفل لبدء الامتحان<br>الامتحان 10 أسئلة، مدته 30 دقيقة</p>
+<!-- حطي رابط قوقل فورم تبعك محل كلمة LINK_HERE -->
+<a class="btn2" href="LINK_HERE" target="_blank">ابدأ الامتحان الآن ✅</a>
+<p style="color:#666;font-size:14px">بعد ما تخلص، اكبس إرسال داخل الفورم</p>
 </div>
 
 <div class="signature">
 <h3>🌟 مع تمنياتي لكم بالتوفيق والنجاح 🌟</h3>
-<p>أتمنى لكم التفوق والتميز، أنتم قدها!</p>
-<p><b>معلمتكم: لينا عصام</b></p>
+<p>معلمتكم: لينا عصام</p>
 </div>
 
-<div class="card" id="done">
-<h2 style="font-size:30px">تم استلام الامتحان</h2>
-<p style="font-size:18px;line-height:1.8">تم تسليم امتحانك بنجاح.<br>سيتمكن المعلم من مراجعة نتيجتك.</p>
-<p style="font-size:17px;color:#856404"><b>بالتوفيق يا أبطال! - مس لينا عصام</b></p>
-</div>
+<div style="text-align:center;color:#666;font-size:13px;padding:15px">مدرسة عابود الثانوية المختلطة</div>
 
-<div class="footer">مدرسة عابود الثانوية المختلطة — المساعد الأكاديمي</div>
-
-<script>
-function submitExam(){
-if(!document.getElementById('name').value){alert('اكتب اسمك أولاً');return;}
-document.getElementById('exam').style.display='none';
-document.getElementById('done').style.display='block';
-window.scrollTo(0,0);
-}
-</script>
 </body>
 </html>
