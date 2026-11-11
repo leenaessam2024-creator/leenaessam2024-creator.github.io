@@ -6,44 +6,77 @@
 <title>امتحان التكنولوجيا - توجيهي - عابود</title>
 <style>
 *{box-sizing:border-box}
-body{font-family:Arial;margin:0;background:#eef2f7}
-.header{background:#1e3a6e;color:white;text-align:center;padding:28px 15px}
-.header p{margin:3px;font-size:16px}
-.header h2{margin:14px 0 0;font-size:23px;line-height:1.5}
-.card{background:white;max-width:650px;margin:20px auto;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.1);text-align:center}
-input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-size:16px}
-.btn{display:block;background:#1e3a6e;color:white;text-decoration:none;padding:18px;border-radius:10px;font-size:20px;margin:15px 0}
-.btn2{display:block;background:#0d9b4d;color:white;text-decoration:none;padding:18px;border-radius:10px;font-size:20px;margin:15px 0}
-.signature{text-align:center;background:#fff3cd;border:2px solid #ffc107;padding:20px;margin:20px auto;max-width:650px;border-radius:12px}
-.signature h3{margin:0;color:#856404;font-size:20px}
+body{font-family:'Segoe UI',Arial;margin:0;background:#dbe6f5 url('https://www.transparenttextures.com/patterns/cubes.png');padding:20px 12px}
+.frame{
+max-width:700px;margin:0 auto;
+background:white;
+border:6px double #c9a227;
+outline:3px solid #1e3a6e;
+outline-offset:6px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.25)
+}
+.header{
+background:linear-gradient(135deg,#1e3a6e 0%,#2a5aa8 100%);
+color:white;text-align:center;padding:32px 18px 24px;
+border-bottom:4px solid #c9a227;
+position:relative
+}
+.header:before{content:"✦ ✦ ✦";display:block;color:#ffd700;letter-spacing:8px;font-size:14px;margin-bottom:10px}
+.header p{margin:4px;font-size:16px}
+.header h2{margin:16px 0 0;font-size:25px;line-height:1.5}
+.header h2 span{color:#ffd700}
+.top-badge{background:#ffd700;color:#1e3a6e;display:inline-block;padding:6px 18px;border-radius:20px;font-weight:bold;font-size:14px;margin-bottom:12px}
+.card{padding:28px 24px;text-align:center}
+input{width:100%;padding:13px;margin:8px 0;border:2px solid #dbe6f5;border-radius:12px;font-size:16px;background:#f8faff}
+.info-box{background:#f0f5ff;border:1px dashed #1e3a6e;padding:15px;border-radius:12px;margin:18px 0;font-size:16px;line-height:1.9;color:#1e3a6e}
+.btn2{display:block;background:linear-gradient(135deg,#0d9b4d,#0ec95c);color:white;text-decoration:none;padding:18px;border-radius:14px;font-size:21px;font-weight:bold;margin:18px 0;box-shadow:0 6px 15px rgba(13,155,77,.35)}
+.signature{
+margin:0 24px 24px;background:linear-gradient(135deg,#fff8d6,#fff3b0);
+border:2px solid #c9a227;border-radius:16px;padding:20px;text-align:center
+}
+.signature h3{margin:0;color:#7a5c00;font-size:21px;line-height:1.7}
+.signature p{margin:8px 0 0;font-size:17px}
+.footer{text-align:center;padding:0 0 22px;color:#888;font-size:13px}
 </style>
 </head>
 <body>
 
+<div class="frame">
 <div class="header">
+<div class="top-badge">✦ امتحان رسمي ✦</div>
 <p>دولة فلسطين</p>
 <p>وزارة التربية والتعليم العالي</p>
 <p>مديرية التربية والتعليم - بيرزيت</p>
-<p>مدرسة عابود الثانوية المختلطة</p>
-<h2>امتحان التكنولوجيا — توجيهي</h2>
+<p><b>مدرسة عابود الثانوية المختلطة</b></p>
+<h2>امتحان التكنولوجيا<br><span>— توجيهي —</span></h2>
 </div>
 
 <div class="card">
-<h2>بيانات الطالب</h2>
-<input type="text" placeholder="اسم الطالب الثلاثي *">
-<input type="text" placeholder="الشعبة - علمي / أدبي">
-<p style="font-size:17px;line-height:1.8">اضغط على الزر بالأسفل لبدء الامتحان<br>الامتحان 10 أسئلة، مدته 30 دقيقة</p>
-<!-- حطي رابط قوقل فورم تبعك محل كلمة LINK_HERE -->
+<h2 style="margin:0;color:#1e3a6e">🌸 أهلاً بكم أبطال التوجيهي 🌸</h2>
+<input type="text" placeholder="✏️ اسم الطالب الثلاثي *">
+<input type="text" placeholder="📚 الشعبة - علمي / أدبي">
+
+<div class="info-box">
+⏰ <b>مدة الامتحان:</b> 30 دقيقة<br>
+📝 <b>عدد الأسئلة:</b> 10 أسئلة<br>
+✅ <b>تعليمات:</b> اقرأ السؤال جيداً قبل الإجابة
+</div>
+
+<!-- حطي رابط قوقل فورم تبعك محل LINK_HERE -->
 <a class="btn2" href="LINK_HERE" target="_blank">ابدأ الامتحان الآن ✅</a>
-<p style="color:#666;font-size:14px">بعد ما تخلص، اكبس إرسال داخل الفورم</p>
+<p style="color:#888;font-size:14px">اضغط على الزر وسيتم تحويلك لنموذج الامتحان</p>
 </div>
 
 <div class="signature">
 <h3>🌟 مع تمنياتي لكم بالتوفيق والنجاح 🌟</h3>
-<p>معلمتكم: لينا عصام</p>
+<p>أتمنى لكم التفوق والتميز، أنتم قدها!</p>
+<p><b>معلمتكم: لينا عصام ❤️</b></p>
 </div>
 
-<div style="text-align:center;color:#666;font-size:13px;padding:15px">مدرسة عابود الثانوية المختلطة</div>
+<div class="footer">مدرسة عابود الثانوية المختلطة — 2026</div>
+</div>
 
 </body>
 </html>
