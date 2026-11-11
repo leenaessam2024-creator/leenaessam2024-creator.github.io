@@ -6,37 +6,22 @@
 <title>امتحان التكنولوجيا - توجيهي - عابود</title>
 <style>
 *{box-sizing:border-box}
-body{font-family:'Segoe UI',Arial;margin:0;background:#dbe6f5 url('https://www.transparenttextures.com/patterns/cubes.png');padding:20px 12px}
-.frame{
-max-width:700px;margin:0 auto;
-background:white;
-border:6px double #c9a227;
-outline:3px solid #1e3a6e;
-outline-offset:6px;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.25)
-}
-.header{
-background:linear-gradient(135deg,#1e3a6e 0%,#2a5aa8 100%);
-color:white;text-align:center;padding:32px 18px 24px;
-border-bottom:4px solid #c9a227;
-position:relative
-}
+body{font-family:'Segoe UI',Arial;margin:0;background:#dbe6f5;padding:20px 12px}
+.frame{max-width:700px;margin:0 auto;background:white;border:6px double #c9a227;outline:3px solid #1e3a6e;outline-offset:6px;border-radius:20px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.25)}
+.header{background:linear-gradient(135deg,#1e3a6e,#2a5aa8);color:white;text-align:center;padding:32px 18px 24px;border-bottom:4px solid #c9a227}
 .header:before{content:"✦ ✦ ✦";display:block;color:#ffd700;letter-spacing:8px;font-size:14px;margin-bottom:10px}
 .header p{margin:4px;font-size:16px}
 .header h2{margin:16px 0 0;font-size:25px;line-height:1.5}
 .header h2 span{color:#ffd700}
 .top-badge{background:#ffd700;color:#1e3a6e;display:inline-block;padding:6px 18px;border-radius:20px;font-weight:bold;font-size:14px;margin-bottom:12px}
 .card{padding:28px 24px;text-align:center}
-input{width:100%;padding:13px;margin:8px 0;border:2px solid #dbe6f5;border-radius:12px;font-size:16px;background:#f8faff}
+label{display:block;text-align:right;font-weight:bold;color:#1e3a6e;margin:14px 0 5px;font-size:16px}
+input,select{width:100%;padding:13px;border:2px solid #dbe6f5;border-radius:12px;font-size:16px;background:#f8faff}
+select{cursor:pointer}
 .info-box{background:#f0f5ff;border:1px dashed #1e3a6e;padding:15px;border-radius:12px;margin:18px 0;font-size:16px;line-height:1.9;color:#1e3a6e}
-.btn2{display:block;background:linear-gradient(135deg,#0d9b4d,#0ec95c);color:white;text-decoration:none;padding:18px;border-radius:14px;font-size:21px;font-weight:bold;margin:18px 0;box-shadow:0 6px 15px rgba(13,155,77,.35)}
-.signature{
-margin:0 24px 24px;background:linear-gradient(135deg,#fff8d6,#fff3b0);
-border:2px solid #c9a227;border-radius:16px;padding:20px;text-align:center
-}
-.signature h3{margin:0;color:#7a5c00;font-size:21px;line-height:1.7}
+.btn2{display:block;background:linear-gradient(135deg,#0d9b4d,#0ec95c);color:white;text-decoration:none;padding:18px;border-radius:14px;font-size:21px;font-weight:bold;margin:18px 0;box-shadow:0 6px 15px rgba(13,155,77,.35);cursor:pointer;border:none;width:100%}
+.signature{margin:0 24px 24px;background:linear-gradient(135deg,#fff8d6,#fff3b0);border:2px solid #c9a227;border-radius:16px;padding:20px;text-align:center}
+.signature h3{margin:0;color:#7a5c00;font-size:21px}
 .signature p{margin:8px 0 0;font-size:17px}
 .footer{text-align:center;padding:0 0 22px;color:#888;font-size:13px}
 </style>
@@ -50,23 +35,52 @@ border:2px solid #c9a227;border-radius:16px;padding:20px;text-align:center
 <p>وزارة التربية والتعليم العالي</p>
 <p>مديرية التربية والتعليم - بيرزيت</p>
 <p><b>مدرسة عابود الثانوية المختلطة</b></p>
-<h2>امتحان التكنولوجيا<br><span>— توجيهي —</span></h2>
+<h2>امتحانات <span>— توجيهي —</span></h2>
 </div>
 
 <div class="card">
 <h2 style="margin:0;color:#1e3a6e">🌸 أهلاً بكم أبطال التوجيهي 🌸</h2>
-<input type="text" placeholder="✏️ اسم الطالب الثلاثي *">
-<input type="text" placeholder="📚 الشعبة - علمي / أدبي">
 
-<div class="info-box">
-⏰ <b>مدة الامتحان:</b> 30 دقيقة<br>
-📝 <b>عدد الأسئلة:</b> 10 أسئلة<br>
-✅ <b>تعليمات:</b> اقرأ السؤال جيداً قبل الإجابة
+<label>✏️ اسم الطالب الثلاثي</label>
+<input type="text" id="studentName" placeholder="اكتب اسمك الثلاثي *">
+
+<label>📚 اختر الشعبة</label>
+<select id="branch">
+<option>علمي</option>
+<option>أدبي</option>
+<option>تجاري</option>
+<option>صناعي</option>
+</select>
+
+<label>📖 اختر المساق</label>
+<select id="subject">
+<option>التكنولوجيا</option>
+<option>الرياضيات</option>
+<option>الفيزياء</option>
+<option>الكيمياء</option>
+<option>الأحياء</option>
+<option>اللغة العربية</option>
+<option>اللغة الإنجليزية</option>
+<option>التربية الإسلامية</option>
+<option>التاريخ</option>
+<option>الجغرافيا</option>
+</select>
+
+<label>📝 اختر نوع الامتحان</label>
+<select id="examType">
+<option value="يومي">امتحان يومي 📝</option>
+<option value="شهري">امتحان شهري 📅</option>
+<option value="نهائي">امتحان نهائي 🎓</option>
+</select>
+
+<div class="info-box" id="infoBox">
+⏰ <b>مدة الامتحان:</b> حسب نوع الامتحان<br>
+📝 اختر المساق ونوع الامتحان ثم اضغط ابدأ
 </div>
 
 <!-- حطي رابط قوقل فورم تبعك محل LINK_HERE -->
-<a class="btn2" href="LINK_HERE" target="_blank">ابدأ الامتحان الآن ✅</a>
-<p style="color:#888;font-size:14px">اضغط على الزر وسيتم تحويلك لنموذج الامتحان</p>
+<button class="btn2" onclick="startExam()">ابدأ الامتحان الآن ✅</button>
+<p style="color:#888;font-size:14px">سيتم تحويلك لنموذج الامتحان في قوقل فورم</p>
 </div>
 
 <div class="signature">
@@ -78,5 +92,27 @@ border:2px solid #c9a227;border-radius:16px;padding:20px;text-align:center
 <div class="footer">مدرسة عابود الثانوية المختلطة — 2026</div>
 </div>
 
+<script>
+const examTypeSelect = document.getElementById('examType');
+const infoBox = document.getElementById('infoBox');
+function updateInfo(){
+  const t = examTypeSelect.value;
+  if(t === 'يومي') infoBox.innerHTML = '⏰ <b>امتحان يومي:</b> 10 أسئلة - 15 دقيقة<br>📝 ركز، واقرأ السؤال جيداً';
+  if(t === 'شهري') infoBox.innerHTML = '⏰ <b>امتحان شهري:</b> 20 سؤال - 30 دقيقة<br>📝 يشمل كل ما أخذناه هذا الشهر';
+  if(t === 'نهائي') infoBox.innerHTML = '⏰ <b>امتحان نهائي:</b> 30 سؤال - 60 دقيقة<br>🎓 بالتوفيق، أنت قدها!';
+}
+examTypeSelect.addEventListener('change', updateInfo);
+updateInfo();
+
+function startExam(){
+  const name = document.getElementById('studentName').value;
+  if(!name){ alert('اكتب اسمك أولاً يا بطل!'); return; }
+  const subject = document.getElementById('subject').value;
+  const type = examTypeSelect.value;
+  alert('أهلاً ' + name + '\nالمساق: ' + subject + '\nنوع الامتحان: ' + type + '\n\nسيتم تحويلك للامتحان الآن، بالتوفيق!');
+  // حطي رابط قوقل فورم تبعك هون
+  window.open('LINK_HERE', '_blank');
+}
+</script>
 </body>
 </html>
