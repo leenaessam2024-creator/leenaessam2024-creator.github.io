@@ -3,33 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لينا | موارد تعليمية مفتوحة - سلفيت</title>
+<title>امتحان لينا الإلكتروني</title>
 <style>
-body{font-family:Arial;text-align:center;background:#fff8f0;margin:0;padding:0}
-header{background:#ff6b6b;color:white;padding:50px 20px}
-header h1{font-size:40px;margin:0}
-header p{font-size:20px}
-.box{background:white;margin:20px auto;padding:25px;max-width:600px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
-a{display:inline-block;background:#ff6b6b;color:white;padding:12px 25px;border-radius:25px;text-decoration:none;margin:10px;font-size:18px}
-footer{padding:20px;color:#888}
+body{font-family:Arial;text-align:center;background:#f0f4ff;margin:0;padding:20px}
+h1{color:#4a6cff}
+.box{background:white;max-width:600px;margin:20px auto;padding:25px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);text-align:right}
+button{background:#4a6cff;color:white;border:none;padding:12px 25px;border-radius:25px;font-size:18px;cursor:pointer;margin-top:15px;width:100%}
+button:hover{background:#3553d1}
+label{display:block;background:#f8f9ff;padding:12px;margin:8px 0;border-radius:10px;cursor:pointer;border:2px solid #eee}
+input{margin-left:10px}
+#result{display:none;font-size:22px;padding:20px}
 </style>
 </head>
 <body>
-<header>
-<h1>أهلاً فيكم بموقع لينا 🌸</h1>
-<p>موارد تعليمية مفتوحة - سلفيت | OER</p>
-</header>
+<h1>📝 امتحان لينا الإلكتروني</h1>
+<p>اكتب اسمك وجاوب، وبعدين اكبس إرسال وبتطلع علامتك!</p>
+
 <div class="box">
-<h2>شو رح تلاقوا هون؟</h2>
-<p>أنشطة، أوراق عمل، فيديوهات، وأفكار حلوة للتعليم</p>
-<a href="#">أنشطتي</a>
-<a href="#">أوراق عمل</a>
-<a href="#">فيديوهات</a>
+<label>اسم الطالب: <input type="text" id="name" placeholder="اكتب اسمك هون" style="padding:8px;width:70%"></label>
+
+<h3>1. ما هي عاصمة فلسطين؟</h3>
+<label><input type="radio" name="q1" value="1"> القدس</label>
+<label><input type="radio" name="q1" value="0"> عمان</label>
+<label><input type="radio" name="q1" value="0"> بيروت</label>
+
+<h3>2. كم ناتج 5 + 5 ؟</h3>
+<label><input type="radio" name="q2" value="0"> 9</label>
+<label><input type="radio" name="q2" value="1"> 10</label>
+<label><input type="radio" name="q2" value="0"> 11</label>
+
+<h3>3. ما هو جمع كلمة "كتاب"؟</h3>
+<label><input type="radio" name="q3" value="1"> كتب</label>
+<label><input type="radio" name="q3" value="0"> كتابان</label>
+<label><input type="radio" name="q3" value="0"> كاتب</label>
+
+<h3>4. What is the color of the sky?</h3>
+<label><input type="radio" name="q4" value="0"> Red</label>
+<label><input type="radio" name="q4" value="1"> Blue</label>
+<label><input type="radio" name="q4" value="0"> Green</label>
+
+<h3>5. أي حيوان يسمى "ملك الغابة"؟</h3>
+<label><input type="radio" name="q5" value="1"> الأسد</label>
+<label><input type="radio" name="q5" value="0"> الفيل</label>
+<label><input type="radio" name="q5" value="0"> الأرنب</label>
+
+<button onclick="check()">إرسال الإجابات ✅</button>
+<div id="result"></div>
 </div>
-<div class="box">
-<h2>عن لينا</h2>
-<p>معلمة وبحب أشارك مواردي مع الكل، مجاناً للجميع</p>
-</div>
-<footer>صُنع بحب ❤️ - لينا عصام - 2026</footer>
+
+<script>
+function check(){
+let name=document.getElementById('name').value || "يا بطل";
+let score=0;
+for(let i=1;i<=5;i++){
+let q=document.querySelector('input[name="q'+i+'"]:checked');
+if(q) score+=parseInt(q.value);
+}
+let r=document.getElementById('result');
+r.style.display='block';
+if(score==5) r.innerHTML="🎉 ممتاز يا "+name+"! جبت "+score+"/5 كاااامل! انت بطل!";
+else if(score>=3) r.innerHTML="👏 شاطر يا "+name+"! جبت "+score+"/5";
+else r.innerHTML="💪 حاول مرة تانية يا "+name+"، جبت "+score+"/5، انت بتقدر!";
+}
+</script>
 </body>
 </html>
